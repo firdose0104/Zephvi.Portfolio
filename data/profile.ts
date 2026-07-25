@@ -18,7 +18,7 @@ export interface Profile {
 
 const profile: Profile = {
   name: "Mohammed Firdose FN",
-  photo: "/photo.jpj",
+  photo: "/photo.jpj.jpeg",
   role: "Backend Engineering",
   apprenticeId: "ZPN-NAG-001",
   shortBio:
