@@ -1,7 +1,3 @@
-// Edit this file to customize your portfolio content.
-// You generally should not need to touch anything in /components or /app
-// unless you want to change the design or layout.
-
 export interface ContactInfo {
   email?: string;
   phone?: string;
@@ -21,21 +17,31 @@ export interface Profile {
 }
 
 const profile: Profile = {
-  name: "Jane Apprentice",
-  photo: "/profile-placeholder.svg",
-  role: "Full-Stack Engineering Track",
+  name: "Mohammed Firdose FN",
+  photo: "/photo.jpg",
+  role: "Backend Engineering",
   apprenticeId: "ZPN-NAG-001",
   shortBio:
-    "I'm a FORGE apprentice building real-world software skills through hands-on projects. " +
-    "This is my portfolio — replace this bio with a few sentences about who you are, " +
-    "what you're learning, and what you're excited to build next.",
+    "I'm a FORGE apprentice and aspiring software developer focused on building practical, real-world software solutions. Through hands-on projects, I'm developing my skills in programming, problem-solving, and software development while gaining experience turning ideas into functional applications. I'm eager to contribute my skills to a professional team, learn from experienced developers, and build impactful software that solves meaningful problems.",
+
   forgeCohort: "April 2026",
-  skills: ["TypeScript", "React", "Next.js", "Node.js", "Git"],
+
+  skills: [
+    "TypeScript",
+    "React",
+    "Next.js",
+    "Node.js",
+    "Git",
+    "HTML",
+    "CSS",
+    "JavaScript",
+  ],
+
   contact: {
-    email: "jane@example.com",
-    phone: "",
-    linkedin: "https://linkedin.com/in/example",
-    github: "https://github.com/example",
+    email: "firdose0104@gmail.com",
+    phone: "9353681799",
+    linkedin: "https://www.linkedin.com/in/mohammed-firdose-fn-5289ab2bb/",
+    github: "https://github.com/firdose0104",
   },
 };
 
