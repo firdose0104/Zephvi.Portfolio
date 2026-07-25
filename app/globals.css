@@ -1,4 +1,4 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
@@ -23,5 +23,175 @@ body {
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+} */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: transparent;
+  --foreground: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  position: relative;
+
+  background:
+    linear-gradient(
+      rgba(8, 15, 30, 0.65),
+      rgba(8, 15, 30, 0.75)
+    ),
+    url("/background.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  animation: zoomBackground 20s ease-in-out infinite alternate;
+}
+
+/* Glass overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+
+  background:
+    radial-gradient(circle at 20% 20%, rgba(0,255,255,.08), transparent 35%),
+    radial-gradient(circle at 80% 30%, rgba(0,150,255,.08), transparent 35%),
+    radial-gradient(circle at 50% 80%, rgba(255,255,255,.05), transparent 40%);
+
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Animated grid */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+
+  background-image:
+    linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+
+  background-size: 60px 60px;
+
+  animation: moveGrid 30s linear infinite;
+
+  pointer-events: none;
+  z-index: -2;
+}
+
+@keyframes zoomBackground {
+  from {
+    background-size: 100%;
+  }
+  to {
+    background-size: 115%;
+  }
+}
+
+@keyframes moveGrid {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 60px 60px;
+  }
+}
+
+@layer utilities {
+  .glass {
+    background: rgba(255,255,255,.08);
+    backdrop-filter: blur(18px);
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 20px;
+  }
+
+  .glow {
+    box-shadow:
+      0 0 30px rgba(0,180,255,.35),
+      0 0 80px rgba(0,180,255,.15);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+body {
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  position: relative;
+  margin: 0;
+
+  background:
+    radial-gradient(circle at top left, #2563eb 0%, transparent 35%),
+    radial-gradient(circle at bottom right, #06b6d4 0%, transparent 30%),
+    linear-gradient(135deg, #020617 0%, #0f172a 45%, #111827 100%);
+
+  background-attachment: fixed;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+
+  background:
+    linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+
+  background-size: 70px 70px;
+  animation: gridMove 30s linear infinite;
+  opacity: .35;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+
+  background:
+    radial-gradient(circle, rgba(59,130,246,.35) 2px, transparent 2px);
+
+  background-size: 90px 90px;
+  animation: floatDots 20s linear infinite;
+  opacity: .6;
+}
+@keyframes gridMove {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(70px);
+  }
+}
+
+@keyframes floatDots {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-90px);
   }
 }
